@@ -37,5 +37,9 @@ int main() {
   int z = 4;
   func = [z](int x, int y){ return x + y + z; }; // лямбда
   std::cout << func(5, 5) << '\n'; // 14
+
+  int A::* field_ptr = &A::z; // указатель на поле
+  Function<int(A&)> func3 = field_ptr;
+  std::cout << func3(object) << '\n'; // 7
 }
 ```
