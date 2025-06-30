@@ -1,5 +1,9 @@
+#pragma once
 #include <functional>
 #include <typeinfo>
+
+#ifndef NENIY_FUNCTION
+#define NENIY_FUNCTION
 
 template <bool IsMoveOnly, typename T>
 class FunctionBase; // Для типов, которые не являются функциональными
@@ -292,3 +296,5 @@ template <typename T>
 using Function = FunctionBase<false, T>;
 template <typename T>
 using MoveOnlyFunction = FunctionBase<true, T>;
+
+#endif // NENIY_FUNCTION
